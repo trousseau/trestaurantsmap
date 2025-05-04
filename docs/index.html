@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Boston Eats + MBTA Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // Initialize the map centered on Boston
+    const map = L.map('map').setView([42.3601, -71.0589], 13);
+
+    // Add OpenStreetMap base layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Load MBTA subway lines from GeoJSON
+    fetch('mbta-lines.geojson')
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          style: {
+            color: 'blue',
+            weight: 3
+          }
+        }).addTo(map);
+      });
+
+    // Load MBTA stations from GeoJSON
+    fetch('mbta-stations.geojson')
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          pointToLayer: (feature, latlng) =>
+            L.circleMarker(latlng, {
+              radius: 5,
+              fillColor: 'red',
+              color: 'red',
+              weight: 1,
+              fillOpacity: 0.9
+            }).bindPopup(feature.properties.name)
+        }).addTo(map);
+      });
+
+    // Load restaurant review markers
+    fetch('restaurants.json')
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(place => {
+          L.marker([place.lat, place.lng])
+            .addTo(map)
+            .bindPopup(`<strong>${place.name}</strong><br>${place.review}`);
+        });
+      });
+  </script>
+</body>
+</html>
