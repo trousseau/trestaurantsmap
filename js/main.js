@@ -68,17 +68,14 @@ fetch('data/mbta-stations.geojson')
     }).addTo(map);
   });
 
-  fetch('mbta/green_line.geojson')
+  fetch('data/mbta-stations.geojson')
   .then(res => res.json())
   .then(data => {
-    console.log(data); // See if it includes the extension
-    L.geoJSON(data, {
-      style: {
-        color: '#00843D',
-        weight: 5,
-        opacity: 0.8
-      }
-    }).addTo(map);
+    // Log all features to inspect the structure
+    data.features.forEach((feature) => {
+      console.log('Feature Properties:', feature.properties);
+      console.log('Geometry:', feature.geometry);
+    });
   });
 
 
