@@ -32,36 +32,23 @@
  fetch('data/mbta-stations.geojson')
  .then(res => res.json())
  .then(data => {
-   // Check if there are features in the GeoJSON
-   if (!data.features || data.features.length === 0) {
-     console.error("GeoJSON data is empty or malformed.");
-     return;
-   }
-
    L.geoJSON(data, {
      pointToLayer: function (feature, latlng) {
-       const primaryLine = feature.properties.lines ? feature.properties.lines[0] : "Unknown Line";
-       const baseColor = lineColors[primaryLine] || "#999999"; // Default gray if no color found
+       const primaryLine = feature.properties.lines[0];
+       const baseColor = lineColors[primaryLine] || "#999999";
+       const fill = adjustColor(baseColor, 30);
 
        return L.circleMarker(latlng, {
          radius: 6,
-         fillColor: baseColor,
+         fillColor: fill,
          color: baseColor,
          weight: 2,
          opacity: 1,
          fillOpacity: 0.9
-       })
-       .bindPopup(`
-         <strong>${feature.properties.name || "Unnamed Station"}</strong><br>
-         Lines: ${feature.properties.lines ? feature.properties.lines.join(', ') : 'N/A'}
-       `);
+       });
      }
    }).addTo(map);
- })
- .catch(error => {
-   console.error("Error loading GeoJSON:", error);
  });
-
 
 
  // Load restaurant review markers
