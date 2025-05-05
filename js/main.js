@@ -34,11 +34,15 @@ fetch('data/mbta-stations.geojson')
   .then(data => {
     L.geoJSON(data, {
       pointToLayer: function (feature, latlng) {
+        const primaryLine = feature.properties.lines[0];
+        const baseColor = lineColors[primaryLine] || "#999999";
+        const fill = adjustColor(baseColor, 30);
+
         return L.circleMarker(latlng, {
           radius: 6,
-          fillColor: "#ff0000", // Simple color for test
-          color: "#000",
-          weight: 1,
+          fillColor: fill,
+          color: baseColor,
+          weight: 2,
           opacity: 1,
           fillOpacity: 0.9
         });
@@ -53,7 +57,6 @@ fetch('data/mbta-stations.geojson')
       }
     }).addTo(map);
   });
-
 
 // Load restaurant review markers
 fetch('data/restaurants.json')
