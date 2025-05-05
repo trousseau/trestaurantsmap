@@ -38,11 +38,9 @@
        const primaryLine = feature.properties.lines[0];
        const baseColor = lineColors[primaryLine] || "#999999";
        const fill = adjustColor(baseColor, 30);
-       const popupContent = `<strong>${station.properties.name}</strong><br>${station.properties.lines.join(', ')}`;
-       L.marker(latlng)
-       .addTo(map)
-       .bindPopup(popupContent);
-       return L.circleMarker(latlng, {
+
+       // Create the circle marker
+       const marker = L.circleMarker(latlng, {
          radius: 6,
          fillColor: fill,
          color: baseColor,
@@ -50,9 +48,20 @@
          opacity: 1,
          fillOpacity: 0.9
        });
+
+       // Add a popup with station information
+       const popupContent = `
+         <strong>${feature.properties.name}</strong><br>
+         Lines: ${feature.properties.lines.join(', ')}<br>
+         <em>Station Info</em> - Additional data can go here.
+       `;
+       marker.bindPopup(popupContent);
+
+       return marker;
      }
    }).addTo(map);
  });
+
 
  // Load restaurant review markers
  fetch('data/restaurants.json')
