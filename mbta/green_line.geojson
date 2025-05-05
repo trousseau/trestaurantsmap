@@ -398,7 +398,7 @@
             "type": "Feature",
             "properties": {
                 "directions": ["E", "W"],
-                "id": "green-e",
+                "id": "green-e-extension",
                 "stops": [
                     "medford-tufts",
                     "ball-square",
