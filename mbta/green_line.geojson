@@ -276,8 +276,6 @@
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
-                    [-71.08469, 42.372808],
-                    [-71.076593, 42.370774],
                     [-71.067666, 42.366664],
                     [-71.061251, 42.365551],
                     [-71.057922, 42.363222],
@@ -308,8 +306,6 @@
                 "directions": ["E", "W"],
                 "id": "green-d",
                 "stops": [
-                    "union-square",
-                    "lechmere",
                     "science-park",
                     "north-station",
                     "haymarket",
@@ -337,6 +333,22 @@
                 "name": "Riverside (D)"
             }
         },
+        {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [-71.076593, 42.370774], 
+                [-71.08469, 42.372808]   
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "directions": ["N", "S"],
+              "id": "green-union",
+              "stops": ["lechmere", "union-square"],
+              "name": "Union Square Branch"
+            }
+          },
         {
             "geometry": {
                 "type": "LineString",
@@ -402,7 +414,6 @@
                 "name": "Heath St. (E)"
             }
         }
-
 
     ]
 }
