@@ -2849,7 +2849,7 @@
       "type": "Feature",
       "properties": {
         "area": "boston",
-        "lines": ["green-union", "green"],
+        "lines": ["green","green-union"],
         "id": "union-square",
         "name": "Union Square"
       }
