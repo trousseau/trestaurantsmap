@@ -6,20 +6,21 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Function to add a line with color
 function addMBTALine(geojsonUrl, color) {
-  fetch(geojsonUrl)
-    .then(res => res.json())
-    .then(data => {
-      L.geoJSON(data, {
-        style: {
-          color: color,
-          weight: 5,
-          opacity: 0.8
-        }
-      }).addTo(map);
-    });
-}
+    fetch(geojsonUrl)
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          style: function () {
+            return {
+              color: color,
+              weight: 5,
+              opacity: 0.8
+            };
+          }
+        }).addTo(map);
+      });
+  }  
 
 // Add MBTA subway lines with their respective colors
 addMBTALine('mbta/red_line.geojson', '#DA291C');
