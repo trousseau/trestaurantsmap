@@ -529,19 +529,12 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.076593,
-          42.370774
-        ]
+        "coordinates": [-71.076593, 42.370774]
       },
       "type": "Feature",
       "properties": {
-        "area": "cambridge",
-        "lines": [
-          "green-e",
-          "green-d",
-          "green"
-        ],
+        "area": "boston",
+        "lines": ["green-d", "green-e", "green-union", "green"],
         "id": "lechmere",
         "name": "Lechmere"
       }
@@ -2856,7 +2849,7 @@
       "type": "Feature",
       "properties": {
         "area": "boston",
-        "lines": ["green-e", "green"],
+        "lines": ["green-union", "green"],
         "id": "union-square",
         "name": "Union Square"
       }
