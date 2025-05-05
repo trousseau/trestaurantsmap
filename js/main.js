@@ -1,5 +1,9 @@
-// Initialize the map centered on Boston
-const map = L.map('map').setView([42.3601, -71.0589], 13);
+const map = L.map('map', {
+    zoomControl: false // disable default position
+  }).setView([42.3601, -71.0589], 13);
+  
+  // Add zoom control manually to bottom right
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
 
 // Add OpenStreetMap base layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
