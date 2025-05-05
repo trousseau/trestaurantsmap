@@ -32,25 +32,35 @@
  fetch('data/mbta-stations.geojson')
  .then(res => res.json())
  .then(data => {
+   // Check if there are features in the GeoJSON
+   if (!data.features || data.features.length === 0) {
+     console.error("GeoJSON data is empty or malformed.");
+     return;
+   }
+
    L.geoJSON(data, {
      pointToLayer: function (feature, latlng) {
-       // Basic circle marker with a default color
+       const primaryLine = feature.properties.lines ? feature.properties.lines[0] : "Unknown Line";
+       const baseColor = lineColors[primaryLine] || "#999999"; // Default gray if no color found
+
        return L.circleMarker(latlng, {
          radius: 6,
-         color: "#3388ff", // Blue color for markers
+         fillColor: baseColor,
+         color: baseColor,
          weight: 2,
          opacity: 1,
          fillOpacity: 0.9
        })
        .bindPopup(`
-         <strong>${feature.properties.name}</strong><br>
-         Lines: ${feature.properties.lines.join(', ')}<br>
-         <em>Station Info</em>
-       `); // Add a simple popup
+         <strong>${feature.properties.name || "Unnamed Station"}</strong><br>
+         Lines: ${feature.properties.lines ? feature.properties.lines.join(', ') : 'N/A'}
+       `);
      }
    }).addTo(map);
  })
- .catch(error => console.error('Error loading GeoJSON:', error));
+ .catch(error => {
+   console.error("Error loading GeoJSON:", error);
+ });
 
 
 
