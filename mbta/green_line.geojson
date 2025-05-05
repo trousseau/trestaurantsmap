@@ -335,21 +335,21 @@
         },
         {
             "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [-71.076593, 42.370774], 
-                [-71.08469, 42.372808]   
-              ]
+                "type": "LineString",
+                "coordinates": [
+                    [-71.076593, 42.370774],
+                    [-71.08469, 42.372808]
+                ]
             },
             "type": "Feature",
             "properties": {
-              "directions": ["N", "S"],
-              "id": "green-union",
-              "stops": ["lechmere", "union-square"],
-              "name": "Union Square Branch"
+                "directions": ["N", "S"],
+                "id": "green-union",
+                "stops": ["lechmere", "union-square"],
+                "name": "Union Square Branch"
             }
-          },
-          {
+        },
+        {
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
@@ -382,8 +382,35 @@
                 "stops": ["lechmere", "science-park", "north-station", "haymarket", "government-center"],
                 "name": "Green Line E Branch"
             }
+        },
+        {
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-71.11068, 42.32868],
+                    [-71.111406, 42.32996],
+                    [-71.112004, 42.331686],
+                    [-71.109678, 42.333106],
+                    [-71.105682, 42.333722],
+                    [-71.100052, 42.335898]
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "directions": ["E", "W"],
+                "id": "green-e",
+                "stops": [
+                    "medford-tufts",
+                    "ball-square",
+                    "magoun-square",
+                    "gilman-square",
+                    "east-somerville",
+                    "lechmere"
+                ],
+                "name": "Heath St. (E)"
+            }
         }
-        
+
 
     ]
 }
