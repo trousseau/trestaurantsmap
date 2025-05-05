@@ -7,13 +7,14 @@ function adjustColor(hex, amount) {
   }
   
   const lineColors = {
-    red: "#FF9999",        // soft red
-    blue: "#9999FF",       // soft blue
-    green: "#33A533",      // still good for contrast
-    "green-b": "#66BB66",  // lighter
-    "green-c": "#66CC66",  // lighter
-    "green-d": "#99EE99",  // lighter lime
-    "green-e": "#AADD99",  // pastel green
-    orange: "#FFD280"      // lighter orange
+    red: "#FF4D4D",        // Brighter red
+    blue: "#4D7AFF",       // Brighter blue
+    green: "#66CC66",      // Single green for all green lines
+    "green-b": "#66CC66",  // same as green
+    "green-c": "#66CC66",  // same as green
+    "green-d": "#66CC66",  // same as green
+    "green-e": "#66CC66",  // same as green
+    orange: "#FFD280"      // Light orange
   };
+  
   
