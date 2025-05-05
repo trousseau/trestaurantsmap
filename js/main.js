@@ -29,29 +29,28 @@ addMBTALine('mbta/green_line.geojson', '#00843D');
 addMBTALine('mbta/blue_line.geojson', '#003DA5');
 addMBTALine('mbta/silver_line.geojson', '#A5A5A5');
 
-// Load MBTA stations from GeoJSON and add popups
 fetch('data/mbta-stations.geojson')
   .then(res => res.json())
   .then(data => {
     L.geoJSON(data, {
+      onEachFeature: function (feature, layer) {
+        if (feature.geometry.type === "Point") {
+          const name = feature.properties.name || "Unknown Station";
+          const lines = Array.isArray(feature.properties.lines)
+            ? feature.properties.lines.join(", ")
+            : "Unknown lines";
+          layer.bindPopup(`<strong>${name}</strong><br>Lines: ${lines}`);
+        }
+      },
       pointToLayer: function (feature, latlng) {
-        const marker = L.circleMarker(latlng, {
+        return L.circleMarker(latlng, {
           radius: 6,
-          fillColor: "#FF0000",
+          fillColor: "#ff0000",
           color: "#000",
           weight: 1,
           opacity: 1,
-          fillOpacity: 0.8
+          fillOpacity: 0.9
         });
-
-        // Add popup with station name and lines
-        const name = feature.properties.name || "Unnamed Station";
-        const lines = Array.isArray(feature.properties.lines)
-          ? feature.properties.lines.join(", ")
-          : "Unknown lines";
-
-        marker.bindPopup(`<strong>${name}</strong><br>Lines: ${lines}`);
-        return marker;
       }
     }).addTo(map);
   });
