@@ -1,0 +1,118 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -71.070888,
+                        42.437134
+                    ],
+                    [
+                        -71.074144,
+                        42.426678
+                    ],
+                    [
+                        -71.076969,
+                        42.405202
+                    ],
+                    [
+                        -71.077056,
+                        42.383434
+                    ],
+                    [
+                        -71.07052,
+                        42.372593
+                    ],
+                    [
+                        -71.061251,
+                        42.365551
+                    ],
+                    [
+                        -71.057922,
+                        42.363222
+                    ],
+                    [
+                        -71.057421,
+                        42.359065
+                    ],
+                    [
+                        -71.060465,
+                        42.355453
+                    ],
+                    [
+                        -71.062759,
+                        42.352529
+                    ],
+                    [
+                        -71.063877,
+                        42.349504
+                    ],
+                    [
+                        -71.075724,
+                        42.347314
+                    ],
+                    [
+                        -71.083072,
+                        42.341762
+                    ],
+                    [
+                        -71.090437,
+                        42.335742
+                    ],
+                    [
+                        -71.095555,
+                        42.331388
+                    ],
+                    [
+                        -71.099787,
+                        42.322893
+                    ],
+                    [
+                        -71.104021,
+                        42.317251
+                    ],
+                    [
+                        -71.107125,
+                        42.310359
+                    ],
+                    [
+                        -71.113377,
+                        42.300023
+                    ]
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "directions": [
+                    "N",
+                    "S"
+                ],
+                "id": "orange",
+                "stops": [
+                    "oak-grove",
+                    "malden",
+                    "wellington",
+                    "sullivan-square",
+                    "community-college",
+                    "north-station",
+                    "haymarket",
+                    "state-street",
+                    "downtown-crossing",
+                    "chinatown",
+                    "tufts-medical-center",
+                    "back-bay",
+                    "massachusetts-ave",
+                    "ruggles",
+                    "roxbury-crossing",
+                    "jackson-square",
+                    "stony-brook",
+                    "green-street",
+                    "forest-hills"
+                ],
+                "name": "Orange Line"
+            }
+        }
+
+    ]
+}

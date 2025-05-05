@@ -1,0 +1,83 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -70.990986,
+                        42.413963
+                    ],
+                    [
+                        -70.99256,
+                        42.408389
+                    ],
+                    [
+                        -70.992363,
+                        42.39745
+                    ],
+                    [
+                        -70.997678,
+                        42.390232
+                    ],
+                    [
+                        -71.004941,
+                        42.386769
+                    ],
+                    [
+                        -71.022476,
+                        42.379759
+                    ],
+                    [
+                        -71.029485,
+                        42.374542
+                    ],
+                    [
+                        -71.038422,
+                        42.368343
+                    ],
+                    [
+                        -71.051807,
+                        42.359634
+                    ],
+                    [
+                        -71.057421,
+                        42.359065
+                    ],
+                    [
+                        -71.059195,
+                        42.359868
+                    ],
+                    [
+                        -71.062129,
+                        42.361457
+                    ]
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "directions": [
+                    "E",
+                    "W"
+                ],
+                "id": "blue",
+                "stops": [
+                    "wonderland",
+                    "revere-beach",
+                    "beachmont",
+                    "suffolk-downs",
+                    "orient-heights",
+                    "wood-island",
+                    "airport",
+                    "maverick",
+                    "aquarium",
+                    "state",
+                    "government-center",
+                    "bowdoin"
+                ],
+                "name": "Blue Line"
+            }
+        }
+
+    ]
+}
