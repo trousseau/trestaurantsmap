@@ -38,6 +38,7 @@ fetch('data/mbta-stations.geojson')
         const baseColor = lineColors[primaryLine] || "#999999";
         const fill = adjustColor(baseColor, 30);
 
+        // Return styled circle marker
         return L.circleMarker(latlng, {
           radius: 6,
           fillColor: fill,
@@ -57,6 +58,7 @@ fetch('data/mbta-stations.geojson')
       }
     }).addTo(map);
   });
+
 
 // Load restaurant review markers
 fetch('data/restaurants.json')
