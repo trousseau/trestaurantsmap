@@ -31,17 +31,27 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Load MBTA subway lines from GeoJSON
-    fetch('mbta-lines.geojson')
-      .then(res => res.json())
-      .then(data => {
-        L.geoJSON(data, {
-          style: {
-            color: 'blue',
-            weight: 3
-          }
-        }).addTo(map);
-      });
+    // Function to add a line with color
+    function addMBTALine(geojsonUrl, color) {
+      fetch(geojsonUrl)
+        .then(res => res.json())
+        .then(data => {
+          L.geoJSON(data, {
+            style: {
+              color: color,
+              weight: 3,
+              opacity: 0.8
+            }
+          }).addTo(map);
+        });
+    }
+
+    // Add MBTA subway lines with their respective colors
+    addMBTALine('mbta/red_line.geojson', '#DA291C');  // Red line
+    addMBTALine('mbta/orange_line.geojson', '#ED8B00');  // Orange line
+    addMBTALine('mbta/green_line.geojson', '#00843D');  // Green line
+    addMBTALine('mbta/blue_line.geojson', '#003DA5');  // Blue line
+    addMBTALine('mbta/silver_line.geojson', '#A5A5A5');  // Silver line
 
     // Load MBTA stations from GeoJSON
     fetch('mbta-stations.geojson')
