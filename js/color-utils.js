@@ -6,15 +6,13 @@ function adjustColor(hex, amount) {
       );
   }
   
-  // Export color map
   const lineColors = {
-    red: "#FF0000",
-    blue: "#0000FF",
-    green: "#008000",
-    "green-b": "#006400",
-    "green-c": "#228B22",
-    "green-d": "#32CD32",
-    "green-e": "#66BB66",
-    orange: "#FFA500"
-  };
-  
+    red: "#FF6666",       // lighter red
+    blue: "#6666FF",      // lighter blue
+    green: "#33A533",     // lighter green
+    "green-b": "#339933", // lighter dark green
+    "green-c": "#44AA44", // lighter forest green
+    "green-d": "#66DD66", // lighter lime green
+    "green-e": "#88CC88", // lighter mint green
+    orange: "#FFB84D"     // lighter orange
+  };  
