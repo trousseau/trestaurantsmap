@@ -31,19 +31,19 @@
 
  // Load MBTA stations from GeoJSON
  fetch('data/mbta-stations.geojson')
-     .then(res => res.json())
-     .then(data => {
-         L.geoJSON(data, {
-             pointToLayer: (feature, latlng) =>
-                 L.circleMarker(latlng, {
-                     radius: 5,
-                     fillColor: 'red',
-                     color: 'red',
-                     weight: 1,
-                     fillOpacity: 0.9
-                 }).bindPopup(feature.properties.name)
-         }).addTo(map);
-     });
+ .then(res => res.json())
+ .then(data => {
+   L.geoJSON(data, {
+     style: function (feature) {
+       const color = lineColors[feature.properties.id] || "#555";
+       return {
+         color: color,
+         weight: 6,
+         opacity: 0.9
+       };
+     }
+   }).addTo(map);
+ });
 
  // Load restaurant review markers
  fetch('data/restaurants.json')
