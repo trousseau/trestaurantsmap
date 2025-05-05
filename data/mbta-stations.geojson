@@ -1,12 +1,10 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
+  "features": [{
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.105682,
-          42.333722
+          -71.10636965985331, 42.334698161542974
         ]
       },
       "type": "Feature",
@@ -417,8 +415,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.111406,
-          42.32996
+          -71.10992468211887, 42.329331572415725
         ]
       },
       "type": "Feature",
@@ -641,8 +638,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.11068,
-          42.32868
+          -71.11047491317342, 42.328454827257026
         ]
       },
       "type": "Feature",
@@ -1326,8 +1322,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.100052,
-          42.335898
+          -71.10489890294124, 42.33519864458304
         ]
       },
       "type": "Feature",
@@ -1383,8 +1378,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.081401,
-          42.345503
+          -71.08020359058172, 42.3451165956608
         ]
       },
       "type": "Feature",
@@ -1549,8 +1543,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.088717,
-          42.340307
+          -71.09071695263016, 42.341140785347996
         ]
       },
       "type": "Feature",
@@ -1806,8 +1799,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.084529,
-          42.342919
+          -71.0872893865482, 42.34252884113943
         ]
       },
       "type": "Feature",
@@ -2095,8 +2087,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.112004,
-          42.331686
+          -71.1113285680488, 42.331258321227644
         ]
       },
       "type": "Feature",
@@ -2251,8 +2242,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.095125,
-          42.337732
+          -71.10085524178038, 42.33758797785144
         ]
       },
       "type": "Feature",
@@ -2704,8 +2694,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.10437,
-          42.334268
+          -71.10571312502074, 42.335383098396555
         ]
       },
       "type": "Feature",
@@ -2742,8 +2731,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.194444,
-          42.328354
+          -71.19137768847786, 42.32884457166352
         ]
       },
       "type": "Feature",
@@ -2849,7 +2837,7 @@
       "type": "Feature",
       "properties": {
         "area": "boston",
-        "lines": ["green","green-union"],
+        "lines": ["green", "green-union"],
         "id": "union-square",
         "name": "Union Square"
       }
