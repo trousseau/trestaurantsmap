@@ -29,38 +29,29 @@
  addMBTALine('mbta/blue_line.geojson', '#003DA5'); // Blue line
  addMBTALine('mbta/silver_line.geojson', '#A5A5A5'); // Silver line
 
- // Load MBTA stations from GeoJSON
  fetch('data/mbta-stations.geojson')
  .then(res => res.json())
  .then(data => {
    L.geoJSON(data, {
      pointToLayer: function (feature, latlng) {
-       const primaryLine = feature.properties.lines[0];
-       const baseColor = lineColors[primaryLine] || "#999999";
-       const fill = adjustColor(baseColor, 30);
-
-       // Create the circle marker
-       const marker = L.circleMarker(latlng, {
+       // Basic circle marker with a default color
+       return L.circleMarker(latlng, {
          radius: 6,
-         fillColor: fill,
-         color: baseColor,
+         color: "#3388ff", // Blue color for markers
          weight: 2,
          opacity: 1,
          fillOpacity: 0.9
-       });
-
-       // Add a popup with station information
-       const popupContent = `
+       })
+       .bindPopup(`
          <strong>${feature.properties.name}</strong><br>
          Lines: ${feature.properties.lines.join(', ')}<br>
-         <em>Station Info</em> - Additional data can go here.
-       `;
-       marker.bindPopup(popupContent);
-
-       return marker;
+         <em>Station Info</em>
+       `); // Add a simple popup
      }
    }).addTo(map);
- });
+ })
+ .catch(error => console.error('Error loading GeoJSON:', error));
+
 
 
  // Load restaurant review markers
