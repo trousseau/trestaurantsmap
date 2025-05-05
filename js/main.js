@@ -33,27 +33,27 @@ fetch('data/mbta-stations.geojson')
   .then(res => res.json())
   .then(data => {
     L.geoJSON(data, {
-      onEachFeature: function (feature, layer) {
-        if (feature.geometry.type === "Point") {
-          const name = feature.properties.name || "Unknown Station";
-          const lines = Array.isArray(feature.properties.lines)
-            ? feature.properties.lines.join(", ")
-            : "Unknown lines";
-          layer.bindPopup(`<strong>${name}</strong><br>Lines: ${lines}`);
-        }
-      },
       pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, {
           radius: 6,
-          fillColor: "#ff0000",
+          fillColor: "#ff0000", // Simple color for test
           color: "#000",
           weight: 1,
           opacity: 1,
           fillOpacity: 0.9
         });
+      },
+      onEachFeature: function (feature, layer) {
+        const name = feature.properties.name || "Unknown Station";
+        const lines = Array.isArray(feature.properties.lines)
+          ? feature.properties.lines.join(", ")
+          : "Unknown lines";
+
+        layer.bindPopup(`<strong>${name}</strong><br>Lines: ${lines}`);
       }
     }).addTo(map);
   });
+
 
 // Load restaurant review markers
 fetch('data/restaurants.json')
