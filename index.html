@@ -8,6 +8,7 @@
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
   <style>
     #map {
@@ -23,6 +24,8 @@
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/color-utils.js"></script>
+  <script src="js/main.js"></script>
 
   <script>
     // Initialize the map centered on Boston
@@ -57,7 +60,7 @@
     addMBTALine('mbta/silver_line.geojson', '#A5A5A5'); // Silver line
 
     // Load MBTA stations from GeoJSON
-    fetch('mbta-stations.geojson')
+    fetch('data/mbta-stations.geojson')
       .then(res => res.json())
       .then(data => {
         L.geoJSON(data, {
@@ -73,7 +76,7 @@
       });
 
     // Load restaurant review markers
-    fetch('restaurants.json')
+    fetch('data/restaurants.json')
       .then(res => res.json())
       .then(data => {
         data.forEach(place => {
