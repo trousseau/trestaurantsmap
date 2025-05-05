@@ -10,16 +10,25 @@ function addMBTALine(geojsonUrl, color) {
     fetch(geojsonUrl)
       .then(res => res.json())
       .then(data => {
-        const layer = L.geoJSON(data, {
-          style: {
-            color: color,
-            weight: 5,
-            opacity: 0.8
+        L.geoJSON(data, {
+          style: function (feature) {
+            if (feature.properties.name === "Green Line Extension") {
+              return {
+                color: "#FF00FF", // Distinct color for testing
+                weight: 8,
+                opacity: 1
+              };
+            }
+            return {
+              color: color,
+              weight: 5,
+              opacity: 0.8
+            };
           }
         }).addTo(map);
-        map.fitBounds(layer.getBounds());
       });
   }
+  
 
 // Add MBTA subway lines with their respective colors
 addMBTALine('mbta/red_line.geojson', '#DA291C');
