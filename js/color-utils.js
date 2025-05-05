@@ -8,7 +8,7 @@ function adjustColor(hex, amount) {
   
   const lineColors = {
     red: "#FF4D4D",         // Bright red for Red Line
-    mattapan: "#CC0000",    // Deeper red for Mattapan Line
+    mattapan: "#8B0000",    // Deeper red for Mattapan Line
     blue: "#4D7AFF",        // Bright blue
     green: "#66CC66",       // Unified green for all Green Line branches
     "green-b": "#66CC66",
