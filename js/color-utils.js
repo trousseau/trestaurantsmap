@@ -7,14 +7,15 @@ function adjustColor(hex, amount) {
   }
   
   const lineColors = {
-    red: "#FF4D4D",        // Brighter red
-    blue: "#4D7AFF",       // Brighter blue
-    green: "#66CC66",      // Single green for all green lines
-    "green-b": "#66CC66",  // same as green
-    "green-c": "#66CC66",  // same as green
-    "green-d": "#66CC66",  // same as green
-    "green-e": "#66CC66",  // same as green
-    orange: "#FFD280"      // Light orange
+    red: "#FF4D4D",         // Bright red for Red Line
+    mattapan: "#CC0000",    // Deeper red for Mattapan Line
+    blue: "#4D7AFF",        // Bright blue
+    green: "#66CC66",       // Unified green for all Green Line branches
+    "green-b": "#66CC66",
+    "green-c": "#66CC66",
+    "green-d": "#66CC66",
+    "green-e": "#66CC66",
+    orange: "#FFB84D"       // Lighter orange
   };
   
   
