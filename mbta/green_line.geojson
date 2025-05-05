@@ -391,8 +391,7 @@
                     [-71.111406, 42.32996],
                     [-71.112004, 42.331686],
                     [-71.109678, 42.333106],
-                    [-71.105682, 42.333722],
-                    [-71.100052, 42.335898]
+                    [-71.105682, 42.333722]
                 ]
             },
             "type": "Feature",
@@ -404,8 +403,7 @@
                     "ball-square",
                     "magoun-square",
                     "gilman-square",
-                    "east-somerville",
-                    "lechmere"
+                    "east-somerville"
                 ],
                 "name": "Green Line E Extension"
             }
