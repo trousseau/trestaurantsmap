@@ -34,13 +34,19 @@
  .then(res => res.json())
  .then(data => {
    L.geoJSON(data, {
-     style: function (feature) {
-       const color = lineColors[feature.properties.id] || "#555";
-       return {
-         color: color,
-         weight: 6,
-         opacity: 0.9
-       };
+     pointToLayer: function (feature, latlng) {
+       const primaryLine = feature.properties.lines[0];
+       const baseColor = lineColors[primaryLine] || "#999999";
+       const fill = adjustColor(baseColor, 30);
+
+       return L.circleMarker(latlng, {
+         radius: 6,
+         fillColor: fill,
+         color: baseColor,
+         weight: 2,
+         opacity: 1,
+         fillOpacity: 0.9
+       });
      }
    }).addTo(map);
  });
