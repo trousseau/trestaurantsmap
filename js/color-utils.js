@@ -16,6 +16,7 @@ function adjustColor(hex, amount) {
     "green-d": "#66CC66",
     "green-e": "#66CC66",
     "green-e-extension": "#66CC66",
+    "green-union": "#66CC66",
     orange: "#FFB84D"       // Lighter orange
   };
   
