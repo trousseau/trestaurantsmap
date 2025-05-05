@@ -2782,6 +2782,84 @@
         "id": "21-dry-dock-ave",
         "name": "21 Dry Dock Ave."
       }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.11102, 42.40761]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": ["green-e", "green"],
+        "id": "medford-tufts",
+        "name": "Medford/Tufts"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.10623, 42.39918]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": ["green-e", "green"],
+        "id": "ball-square",
+        "name": "Ball Square"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.1014, 42.39357]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": ["green-e", "green"],
+        "id": "magoun-square",
+        "name": "Magoun Square"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.09657, 42.38704]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": ["green-e", "green"],
+        "id": "gilman-square",
+        "name": "Gilman Square"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.08748, 42.3783]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": ["green-e", "green"],
+        "id": "east-somerville",
+        "name": "East Somerville"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.08469, 42.372808]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": ["green-e", "green"],
+        "id": "union-square",
+        "name": "Union Square"
+      }
     }
   ]
 }
