@@ -38,7 +38,10 @@
        const primaryLine = feature.properties.lines[0];
        const baseColor = lineColors[primaryLine] || "#999999";
        const fill = adjustColor(baseColor, 30);
-
+       const popupContent = `<strong>${station.properties.name}</strong><br>${station.properties.lines.join(', ')}`;
+       L.marker(latlng)
+       .addTo(map)
+       .bindPopup(popupContent);
        return L.circleMarker(latlng, {
          radius: 6,
          fillColor: fill,
