@@ -3,22 +3,22 @@
 
  // Add OpenStreetMap base layer
  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-   attribution: '&copy; OpenStreetMap contributors'
+     attribution: '&copy; OpenStreetMap contributors'
  }).addTo(map);
 
  // Function to add a line with color
  function addMBTALine(geojsonUrl, color) {
-   fetch(geojsonUrl)
-     .then(res => res.json())
-     .then(data => {
-       L.geoJSON(data, {
-         style: {
-           color: color,
-           weight: 5,
-           opacity: 0.8
-         }
-       }).addTo(map);
-     });
+     fetch(geojsonUrl)
+         .then(res => res.json())
+         .then(data => {
+             L.geoJSON(data, {
+                 style: {
+                     color: color,
+                     weight: 5,
+                     opacity: 0.8
+                 }
+             }).addTo(map);
+         });
  }
 
  // Add MBTA subway lines with their respective colors
@@ -31,71 +31,27 @@
 
  // Load MBTA stations from GeoJSON
  fetch('data/mbta-stations.geojson')
-   .then(res => res.json())
-   .then(data => {
-     L.geoJSON(data, {
-       pointToLayer: (feature, latlng) =>
-         L.circleMarker(latlng, {
-           radius: 5,
-           fillColor: 'red',
-           color: 'red',
-           weight: 1,
-           fillOpacity: 0.9
-         }).bindPopup(feature.properties.name)
-     }).addTo(map);
-   });
+     .then(res => res.json())
+     .then(data => {
+         L.geoJSON(data, {
+             pointToLayer: (feature, latlng) =>
+                 L.circleMarker(latlng, {
+                     radius: 5,
+                     fillColor: 'red',
+                     color: 'red',
+                     weight: 1,
+                     fillOpacity: 0.9
+                 }).bindPopup(feature.properties.name)
+         }).addTo(map);
+     });
 
  // Load restaurant review markers
  fetch('data/restaurants.json')
-   .then(res => res.json())
-   .then(data => {
-     data.forEach(place => {
-       L.marker([place.lat, place.lng])
-         .addTo(map)
-         .bindPopup(`<strong>${place.name}</strong><br>${place.review}`);
+     .then(res => res.json())
+     .then(data => {
+         data.forEach(place => {
+             L.marker([place.lat, place.lng])
+                 .addTo(map)
+                 .bindPopup(`<strong>${place.name}</strong><br>${place.review}`);
+         });
      });
-   });
-
-
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-
-// Load line data
-fetch('data/lines.geojson')
-  .then(res => res.json())
-  .then(data => {
-    L.geoJSON(data, {
-      style: function (feature) {
-        const color = lineColors[feature.properties.id] || "#555";
-        return {
-          color: color,
-          weight: 6,
-          opacity: 0.9
-        };
-      }
-    }).addTo(map);
-  });
-
-// Load station data
-fetch('data/mbta-stations.geojson')
-  .then(res => res.json())
-  .then(data => {
-    L.geoJSON(data, {
-      pointToLayer: function (feature, latlng) {
-        const primaryLine = feature.properties.lines[0];
-        const baseColor = lineColors[primaryLine] || "#999999";
-        const fill = adjustColor(baseColor, 30);
-
-        return L.circleMarker(latlng, {
-          radius: 6,
-          fillColor: fill,
-          color: baseColor,
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.9
-        });
-      }
-    }).addTo(map);
-  });
