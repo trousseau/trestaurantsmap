@@ -78,8 +78,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.022476,
-          42.379759
+          -71.0228173, 42.3796992
         ]
       },
       "type": "Feature",
@@ -243,8 +242,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.124702,
-          42.351833
+          -71.1253206, 42.3517448
         ]
       },
       "type": "Feature",
@@ -444,8 +442,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.100235,
-          42.349126
+          -71.1000925, 42.3492288
         ]
       },
       "type": "Feature",
@@ -463,8 +460,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.142593,
-          42.343886
+          -71.1426222, 42.3440494
         ]
       },
       "type": "Feature",
@@ -571,8 +567,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.166124,
-          42.339902
+           -71.1668298, 42.3401294
         ]
       },
       "type": "Feature",
@@ -886,7 +881,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.1528837, 42.3383505
+          -71.1528837, 42.3383530
         ]
       },
       "type": "Feature",
@@ -904,8 +899,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.131197,
-          42.350118
+          -71.1310250, 42.3504326
         ]
       },
       "type": "Feature",
@@ -923,8 +917,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.990986,
-          42.413963
+           -70.9916668, 42.4134842
         ]
       },
       "type": "Feature",
@@ -1077,8 +1070,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.038422,
-          42.368343
+          -71.0395771, 42.3691036
         ]
       },
       "type": "Feature",
@@ -1112,25 +1104,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.113833,
-          42.350759
-        ]
-      },
-      "type": "Feature",
-      "properties": {
-        "area": "boston",
-        "lines": [
-          "green",
-          "green-b"
-        ],
-        "id": "boston-university-west",
-        "name": "Boston University West"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
            -71.0924274, 42.2675643
         ]
       },
@@ -1149,8 +1122,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.157622,
-          42.339455
+          -71.1572450, 42.3394663
         ]
       },
       "type": "Feature",
@@ -1226,8 +1198,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.146162,
-          42.341483
+          -71.1463022, 42.3415836
         ]
       },
       "type": "Feature",
@@ -1316,12 +1287,31 @@
         "name": "Longwood Medical Area"
       }
     },
+
+   
     {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.121547,
-          42.35169
+          -71.1147420, 42.3509891
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": [
+          "green",
+          "green-b"
+        ],
+        "id": "amory-st",
+        "name": "Amory St"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1199247, 42.3516105
         ]
       },
       "type": "Feature",
@@ -1396,8 +1386,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.106804,
-          42.34989
+          -71.1071849, 42.3500762
         ]
       },
       "type": "Feature",
@@ -1415,8 +1404,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.029485,
-          42.374542
+          -71.0302792, 42.3743300
         ]
       },
       "type": "Feature",
@@ -1756,8 +1744,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.103866,
-          42.349569
+          -71.1043156, 42.3497274
         ]
       },
       "type": "Feature",
@@ -1793,8 +1780,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.992363,
-          42.39745
+           -70.9924990, 42.3973870
         ]
       },
       "type": "Feature",
@@ -1870,8 +1856,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.140224,
-          42.348366
+          -71.1402243, 42.3486366
         ]
       },
       "type": "Feature",
@@ -1948,8 +1933,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.150459,
-          42.340839
+          -71.1509250, 42.3406484
         ]
       },
       "type": "Feature",
@@ -2116,25 +2100,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.118783,
-          42.351345
-        ]
-      },
-      "type": "Feature",
-      "properties": {
-        "area": "boston",
-        "lines": [
-          "green",
-          "green-b"
-        ],
-        "id": "pleasant-st",
-        "name": "Pleasant St"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -71.062759,
           42.352529
         ]
@@ -2156,8 +2121,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.134551,
-          42.348542
+          -71.1343765, 42.3488467
         ]
       },
       "type": "Feature",
@@ -2308,8 +2272,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.99256,
-          42.408389
+           -70.9925392, 42.4078174
         ]
       },
       "type": "Feature",
@@ -2344,8 +2307,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.997678,
-          42.390232
+          -70.9971888, 42.3905089
         ]
       },
       "type": "Feature",
@@ -2491,8 +2453,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.004941,
-          42.386769
+          -71.0047728,  42.3868762
         ]
       },
       "type": "Feature",
@@ -2601,8 +2562,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.137888,
-          42.348468
+          -71.1376112, 42.3486054
         ]
       },
       "type": "Feature",
