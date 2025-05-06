@@ -536,8 +536,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.07052,
-          42.372593
+          -71.0697185, 42.3736246
         ]
       },
       "type": "Feature",
@@ -709,8 +708,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.077056,
-          42.383434
+          -71.0769564,  42.3842952
         ]
       },
       "type": "Feature",
@@ -1103,8 +1101,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.070888,
-          42.437134
+          -71.0707927, 42.4375136
         ]
       },
       "type": "Feature",
@@ -1444,8 +1441,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.074144,
-          42.426678
+          -71.0743091, 42.4265838
         ]
       },
       "type": "Feature",
@@ -2306,8 +2302,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.076969,
-          42.405202
+          -71.0771401, 42.4016282
         ]
       },
       "type": "Feature",
@@ -2484,6 +2479,23 @@
         ],
         "id": "stony-brook",
         "name": "Stony Brook"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0772608, 42.3926454
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "area": "boston",
+        "lines": [
+          "orange"
+        ],
+        "id": "assembly",
+        "name": "Assembly"
       }
     },
     {
