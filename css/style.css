@@ -1,0 +1,62 @@
+/* Style the search box itself */
+.leaflet-control-search {
+    border-radius: 4px; /* Give the search box rounded corners */
+    border: 2px solid #4CAF50; /* Green border (adjust to your preference) */
+    background-color: #fff; /* White background for better contrast */
+    font-size: 16px; /* Larger, more readable text */
+    padding: 5px; /* Add padding for better spacing */
+}
+
+/* Style the input field */
+.leaflet-control-search input {
+    border: none; /* Remove default border */
+    padding: 5px; /* Add padding for better spacing */
+    width: 200px; /* Width of the search box */
+    font-size: 14px; /* Set font size */
+}
+
+/* Style the search button */
+.leaflet-control-search button {
+    background-color: #4CAF50; /* Green button */
+    color: white; /* White text on button */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 16px; /* Larger button text */
+    padding: 6px 12px; /* Add padding */
+}
+
+/* Hover effect on the button */
+.leaflet-control-search button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Style search results */
+.leaflet-control-search .leaflet-search-result {
+    font-size: 14px;
+    padding: 5px;
+    border-bottom: 1px solid #ddd; /* Light border between search results */
+}
+
+/* Style for search result highlight */
+.leaflet-control-search .leaflet-search-result.active {
+    background-color: #4CAF50; /* Highlight active search result with green */
+    color: white; /* Make text white when highlighted */
+}
+
+/* Set a default font */
+body {
+    font-family: Arial, sans-serif; /* Use a clean font */
+}
+
+/* Ensure better contrast for the search input and button text */
+input, button {
+    color: #333; /* Darker text for contrast */
+    background-color: white; /* Make sure the background is white */
+}
+
+/* Style for search result highlights */
+.leaflet-control-search .leaflet-search-result.active {
+    background-color: #4CAF50; /* Green highlight */
+    color: white; /* Ensure text is readable */
+}
