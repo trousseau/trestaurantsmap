@@ -16,64 +16,37 @@
   
   <link rel="stylesheet" href="css/style.css" />
 
-  <style>
-    #map {
-      height: 100vh;
-      width: 100%;
-    }
-
-    .filter-panel {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      padding: 15px;
-      width: 220px;
-      font-family: sans-serif;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .filter-panel h3 {
-      margin-top: 0;
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .filter-panel label {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-    }
-
-    .filter-panel input[type="checkbox"] {
-      margin-right: 8px;
-    }
-  </style>
 </head>
 
 <body>
   <div id="filters" class="filter-panel">
     <h3>Filter Restaurants</h3>
-
-    <strong>By Line</strong>
-    <label><input type="checkbox" name="line" value="Red"> Red Line</label>
-    <label><input type="checkbox" name="line" value="Orange"> Orange Line</label>
-    <label><input type="checkbox" name="line" value="Green"> Green Line</label>
-    <label><input type="checkbox" name="line" value="Blue"> Blue Line</label>
-    <label><input type="checkbox" name="line" value="Silver"> Silver Line</label>
-
-    <br><br>
-    <strong>By Cuisine</strong>
-    <label><input type="checkbox" name="cuisine" value="Mexican"> Mexican</label>
-    <label><input type="checkbox" name="cuisine" value="Thai"> Thai</label>
-    <label><input type="checkbox" name="cuisine" value="Pizza"> Pizza</label>
-    <label><input type="checkbox" name="cuisine" value="Burgers"> Burgers</label>
-    <label><input type="checkbox" name="cuisine" value="Seafood"> Seafood</label>
+  
+    <div class="filter-group">
+      <div class="filter-group-title">By Line</div>
+      <div class="checkbox-grid">
+        <label class="checkbox-label"><input type="checkbox" name="line" value="Red">Red Line</label>
+        <label class="checkbox-label"><input type="checkbox" name="line" value="Orange">Orange Line</label>
+        <label class="checkbox-label"><input type="checkbox" name="line" value="Green">Green Line</label>
+        <label class="checkbox-label"><input type="checkbox" name="line" value="Blue">Blue Line</label>
+        <label class="checkbox-label"><input type="checkbox" name="line" value="Silver">Silver Line</label>
+      </div>
+    </div>
+  
+    <div class="filter-group">
+      <div class="filter-group-title">By Cuisine</div>
+      <div class="checkbox-grid">
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Italian">Italian</label>
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Japanese">Japanese</label>
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Mexican">Mexican</label>
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Thai">Thai</label>
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Pizza">Pizza</label>
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Burgers">Burgers</label>
+        <label class="checkbox-label"><input type="checkbox" name="cuisine" value="Seafood">Seafood</label>
+      </div>
+    </div>
   </div>
+  
   <div id="map"></div>
 
   <!-- Leaflet JS -->

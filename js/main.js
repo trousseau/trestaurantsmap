@@ -8,8 +8,6 @@ let allStationData = null; // Cached GeoJSON
 let stationClusterGroup = null;
 const allMarkers = []; // Global array to store all restaurant markers
 
-console.log('AwesomeMarkers:', L.AwesomeMarkers);
-
 // Add zoom control manually to bottom right
 L.control.zoom({
     position: 'bottomright'
@@ -61,7 +59,7 @@ function filterMarkers() {
     allMarkers.forEach(marker => {
         // Check if the marker matches the selected lines and cuisines
         const matchesLine = selectedLines.length === 0 || selectedLines.some(line => marker.meta.line.toLowerCase().includes(line.toLowerCase()));
-        const matchesCuisine = selectedCuisines.length === 0 || selectedCuisines.includes(marker.meta.cuisine);
+        const matchesCuisine = selectedCuisines.length === 0 || selectedCuisines.some(cuisine => marker.meta.cuisine.toLowerCase().includes(cuisine.toLowerCase()));
 
         // Add or remove marker based on matches
         if (matchesLine && matchesCuisine) {
@@ -187,6 +185,7 @@ fetch('data/restaurants.json')
     map.addLayer(markerLayer); // You can choose to control visibility elsewhere
 
     const searchControl = new L.Control.Search({
+        position: 'topright',
         layer: null, // Disables automatic indexing
         sourceData: function (text, callResponse) {
             console.log('SEARCH FIRED:', text);
