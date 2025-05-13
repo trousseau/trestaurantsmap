@@ -5,4 +5,20 @@
   "cuisine": "Burgers",
   "line": "Green",
   "review": "For the price, you can't get a better burger in Boston. ⭐️⭐️⭐️⭐️"
+},
+{
+  "name": "La Famiglia Giorgio",
+  "lat": 42.36474989665769,
+  "lng": -71.05559422132028,
+  "cuisine": "Italian",
+  "line": "Green,Orange",
+  "review": "Giant portions of Italian classics. ⭐️⭐️⭐️⭐️"
+},
+{
+  "name": "Hokkaido Ramen Santouka Harvard Square", 
+  "lat": 42.37233104736645,
+  "lng": -71.11590722165096,
+  "cuisine": "Japanese,Ramen",
+  "line": "Red",
+  "review": "Rich bowls of slurpable tonkotsu ramen. ⭐️⭐️⭐️⭐️"
 }]
