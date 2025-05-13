@@ -1,90 +1,86 @@
-#map {
-    height: 100vh;
+/* Global Map and Layout */
+#map, #map-container {
     width: 100%;
+    height: 100vh;
+    position: relative;
   }
-
-/* Style the search box itself */
-.leaflet-control-search {
-    border-radius: 4px; /* Give the search box rounded corners */
-    border: 2px solid #4CAF50; /* Green border (adjust to your preference) */
-    background-color: #fff; /* White background for better contrast */
-    font-size: 16px; /* Larger, more readable text */
-    padding: 5px; /* Add padding for better spacing */
-}
-
-/* Style the input field */
-.leaflet-control-search input {
-    border: none; /* Remove default border */
-    padding: 5px; /* Add padding for better spacing */
-    width: 200px; /* Width of the search box */
-    font-size: 14px; /* Set font size */
-}
-
-/* Style the search button */
-.leaflet-control-search button {
-    background-color: #4CAF50; /* Green button */
-    color: white; /* White text on button */
-    border: none; /* Remove button border */
-    border-radius: 3px; /* Rounded corners */
-    font-size: 16px; /* Larger button text */
-    padding: 6px 12px; /* Add padding */
-}
-
-/* Hover effect on the button */
-.leaflet-control-search button:hover {
-    background-color: #45a049; /* Darker green on hover */
-    cursor: pointer; /* Change cursor to pointer */
-}
-
-/* Style search results */
-.leaflet-control-search .leaflet-search-result {
+  
+  /* General Typography */
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Leaflet Search Box */
+  .leaflet-control-search {
+    border-radius: 4px;
+    border: 2px solid #4CAF50;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  .leaflet-control-search input {
+    border: none;
+    padding: 5px;
+    width: 200px;
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+  }
+  
+  .leaflet-control-search button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  
+  .leaflet-control-search button:hover {
+    background-color: #45a049;
+  }
+  
+  .leaflet-control-search .leaflet-search-result {
     font-size: 14px;
     padding: 5px;
-    border-bottom: 1px solid #ddd; /* Light border between search results */
-}
-
-/* Style for search result highlight */
-.leaflet-control-search .leaflet-search-result.active {
-    background-color: #4CAF50; /* Highlight active search result with green */
-    color: white; /* Make text white when highlighted */
-}
-
-/* Set a default font */
-body {
-    font-family: Arial, sans-serif; /* Use a clean font */
-}
-
-/* Ensure better contrast for the search input and button text */
-input, button {
-    color: #333; /* Darker text for contrast */
-    background-color: white; /* Make sure the background is white */
-}
-
-/* Style for search result highlights */
-.leaflet-control-search .leaflet-search-result.active {
-    background-color: #4CAF50; /* Green highlight */
-    color: white; /* Ensure text is readable */
-}
-
-.filter-panel {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .leaflet-control-search .leaflet-search-result.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Filter Panel */
+  #filter-panel,
+  .filter-panel {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    right: 10px;
     z-index: 1000;
     background: white;
+    padding: 16px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 16px;
     width: 240px;
     font-family: system-ui, sans-serif;
     font-size: 14px;
     color: #333;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  #filter-panel.open {
+    max-height: 1000px;
   }
   
   .filter-panel h3 {
-    margin-top: 0;
+    margin: 0 0 12px;
     font-size: 18px;
-    margin-bottom: 12px;
   }
   
   .filter-group {
@@ -121,3 +117,121 @@ input, button {
     margin: 0;
   }
   
+  /* Toggle Button */
+  .toggle-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Popup Card */
+  .popup-card {
+    font-family: sans-serif;
+    max-width: 200px;
+  }
+  
+  .popup-card h4 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .popup-card a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+  
+  /* Custom Cluster Icon */
+  .custom-cluster-icon {
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Leaflet Control Position Overrides */
+  .leaflet-control-zoom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1500;
+  }
+  
+  .leaflet-control-fullscreen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1500;
+  }
+  
+  .leaflet-control-minimap {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1500;
+  }
+  
+  .leaflet-control-geolocate {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1500;
+  }
+
+  /* Toggle button styling */
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Filter panel styles (collapsed and open) */
+  #filter-panel {
+    position: absolute;
+    top: 50px; /* Leave room for the toggle button */
+    right: 10px;
+    z-index: 1000;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    width: 240px;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    color: #333;
+  
+    transition: max-height 0.3s ease-out, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  #filter-panel.open {
+    max-height: 1000px;
+    opacity: 1;
+  }

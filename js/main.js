@@ -2,21 +2,37 @@ const map = L.map('map', {
     zoomControl: false // disable default position
 }).setView([42.3601, -71.0589], 13);
 
+const miniMapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: ''
+  });
+
 const mbtaLines = {};
 let stationLayer = null;
 let allStationData = null; // Cached GeoJSON
 let stationClusterGroup = null;
 const allMarkers = []; // Global array to store all restaurant markers
 
-// Add zoom control manually to bottom right
-L.control.zoom({
-    position: 'bottomright'
-}).addTo(map);
+const cuisineIconMap = {
+    italian: 'pizza-slice',
+    chinese: 'utensils',
+    japanese: 'fish',
+    mexican: 'pepper-hot',
+    indian: 'burn',
+    american: 'hamburger',
+    burgers: 'hamburger',
+    thai: 'leaf',
+    french: 'wine-glass',
+    default: 'utensils' // fallback icon
+  };
 
 // Add OpenStreetMap base layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; OpenStreetMap contributors'
+// }).addTo(map);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap & CartoDB'
+  }).addTo(map);
 
 function addMBTALine(geojsonUrl, color, lineName) {
     fetch(geojsonUrl)
@@ -70,6 +86,20 @@ function filterMarkers() {
     });
 }
 
+function getHexColor(lineColor) {
+    const colors = {
+        red: '#DA291C',
+        orange: '#ED8B00',
+        green: '#00843D',
+        blue: '#003DA5',
+        lightgray: '#A5A5A5',
+        gray: '#A5A5A5',
+        default: '#666'
+    };
+
+    return colors[lineColor.toLowerCase()] || colors.default;
+}
+
 function filterLines() {
     const selectedLines = Array.from(document.querySelectorAll('input[name="line"]:checked'))
         .map(i => i.value.toLowerCase());
@@ -97,8 +127,30 @@ function filterLines() {
         })
     };
 
-    // ✅ Re-create and assign cluster group globally
-    stationClusterGroup = L.markerClusterGroup();
+    stationClusterGroup = L.markerClusterGroup({
+        iconCreateFunction: function (cluster) {
+            const children = cluster.getAllChildMarkers();
+            const colorCounts = {};
+    
+            // Count marker colors
+            children.forEach(marker => {
+                const line = marker.options.icon.options.markerColor || 'blue';
+                colorCounts[line] = (colorCounts[line] || 0) + 1;
+            });
+    
+            // Get the most common color
+            const dominantColor = Object.entries(colorCounts)
+                .sort((a, b) => b[1] - a[1])[0][0];
+    
+            // Return a custom cluster icon with that color
+            return L.divIcon({
+                html: `<div style="background-color:${getHexColor(dominantColor)};" class="marker-cluster"><span>${cluster.getChildCount()}</span></div>`,
+                className: 'custom-cluster-icon',
+                iconSize: L.point(40, 40)
+            });
+        }
+    });
+    
 
     stationLayer = L.geoJSON(filtered, {
         pointToLayer: function (feature, latlng) {
@@ -147,9 +199,12 @@ function getMarkerIcon(line) {
 
 function getPopupContent(place) {
     return `
-        <div style="font-size: 14px; font-weight: bold;">${place.name}</div>
-        <p>${place.review}</p>
+        <div class="popup-card">
+        <h4>${place.name}</h4>
+        <p><strong>Cuisine:</strong> ${place.cuisine}</p>
+        <p><strong>Line:</strong> ${place.line}</p>
         <a href="${place.website}" target="_blank">Visit website</a>
+        </div>
     `;
 }
 
@@ -159,8 +214,19 @@ fetch('data/restaurants.json')
     const markers = [];
 
     data.forEach(place => {
+      const cuisineStr = place.cuisine.toLowerCase();
+
+      // Try to find the first matching cuisine type
+      let matched = cuisineIconMap['default'];
+      for (const key in cuisineIconMap) {
+        if (cuisineStr.includes(key)) {
+          matched = cuisineIconMap[key];
+          break;
+        }
+      }
+
       const icon = L.AwesomeMarkers.icon({
-        icon: 'utensils',
+        icon:  matched,
         markerColor: 'purple',
         iconColor: 'white',
         prefix: 'fa'
@@ -174,69 +240,16 @@ fetch('data/restaurants.json')
         cuisine: place.cuisine
       };
 
-      // Lowercased string for searching
       marker.searchText = `${place.name} ${place.cuisine} ${place.line}`.toLowerCase();
 
       markers.push(marker);
-      allMarkers.push(marker); // Add to global list for filtering
+      allMarkers.push(marker);
     });
 
-    const markerLayer = L.layerGroup(markers); // DO NOT add to map here if filtering handles that
-    map.addLayer(markerLayer); // You can choose to control visibility elsewhere
-
-    const searchControl = new L.Control.Search({
-        position: 'topright',
-        layer: null, // Disables automatic indexing
-        sourceData: function (text, callResponse) {
-            console.log('SEARCH FIRED:', text);
-            const results = [];
-    
-            markerLayer.eachLayer(marker => {
-                if (marker.searchText?.toLowerCase().includes(text.toLowerCase())) {
-                    const latlng = marker.getLatLng();
-                    if (latlng) {
-                        console.log('LatLng found:', latlng);
-                        results.push({
-                            name: marker.searchText,
-                            latlng: latlng,
-                            layer: marker
-                        });
-                    }
-                }
-            });
-    
-            console.log('Search Results:', results); // Log search results for debugging
-            callResponse(results); // Ensure that results are passed to the search control
-        },
-        propertyName: '', // ✅ Fixes the split error
-        marker: false, // Don't show markers for search results
-        textPlaceholder: 'Search...', // Custom placeholder
-        moveToLocation: function (latlng, title, map) {
-            console.log('moveToLocation triggered for latlng:', latlng);
-            
-            if (latlng) {
-                // Use flyTo for smooth transition
-                map.flyTo(latlng, 16); // Fly to the latlng at zoom level 16
-                console.log('Flying to:', latlng);
-    
-                // Try opening the popup of the found marker as well
-                const foundMarker = markerLayer.getLayers().find(marker => marker.getLatLng().equals(latlng));
-                if (foundMarker) {
-                    foundMarker.openPopup(); // Optionally open the popup
-                    console.log('Opened popup for marker');
-                } else {
-                    console.log('No marker found for this latlng:', latlng);
-                }
-            } else {
-                console.log('No valid latlng found');
-            }
-        }
-    });
-    
-    // Add the search control to the map
-    map.addControl(searchControl);
-    
+    const markerLayer = L.layerGroup(markers);
+    map.addLayer(markerLayer);
   });
+
 
 document.querySelectorAll('input[name="line"]').forEach(input => {
     input.addEventListener('change', () => {
@@ -251,4 +264,31 @@ document.querySelectorAll('input[name="cuisine"]').forEach(input => {
     });
 });
 
+document.getElementById('toggle-btn').addEventListener('click', function() {
+    const filterPanel = document.getElementById('filter-panel');
+    filterPanel.classList.toggle('open');
+  });
+
 map.options.zoomAnimation = true; // Enable smooth zoom transitions
+const locateControl = L.control.locate({
+    position: 'bottomright', // You can adjust this to 'topright', 'bottomleft', etc.
+    strings: {
+        title: "Show me where I am"
+    }
+}).addTo(map);
+
+L.control.fullscreen({
+    position: 'topright', // You can adjust this to bottomleft, etc.
+    title: 'Show fullscreen',
+    titleCancel: 'Exit fullscreen',
+}).addTo(map);
+
+L.control.zoom({
+    position: 'topleft'
+}).addTo(map);
+
+const miniMap = new L.Control.MiniMap(L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'), {
+    position: 'bottomleft', // Controls where the MiniMap is located
+    width: 150,
+    height: 150,
+}).addTo(map);
