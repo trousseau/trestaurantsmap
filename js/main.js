@@ -5,6 +5,7 @@ const map = L.map('map', {
 const mbtaLines = {};
 let stationLayer = null;
 let allStationData = null; // Cached GeoJSON
+let stationClusterGroup = null;
 const allMarkers = []; // Global array to store all restaurant markers
 
 console.log('AwesomeMarkers:', L.AwesomeMarkers);
@@ -59,7 +60,7 @@ function filterMarkers() {
 
     allMarkers.forEach(marker => {
         // Check if the marker matches the selected lines and cuisines
-        const matchesLine = selectedLines.length === 0 || selectedLines.includes(marker.meta.line);
+        const matchesLine = selectedLines.length === 0 || selectedLines.some(line => marker.meta.line.toLowerCase().includes(line.toLowerCase()));
         const matchesCuisine = selectedCuisines.length === 0 || selectedCuisines.includes(marker.meta.cuisine);
 
         // Add or remove marker based on matches
@@ -83,9 +84,9 @@ function filterLines() {
         }
     });
 
-    if (stationLayer) {
-       map.removeLayer(stationLayer);
-        stationLayer = null;
+    // 🔴 Remove previous cluster group if it exists
+    if (stationClusterGroup) {
+        map.removeLayer(stationClusterGroup);
     }
 
     if (!allStationData) return;
@@ -98,7 +99,8 @@ function filterLines() {
         })
     };
 
-    const stationClusterGroup = L.markerClusterGroup();
+    // ✅ Re-create and assign cluster group globally
+    stationClusterGroup = L.markerClusterGroup();
 
     stationLayer = L.geoJSON(filtered, {
         pointToLayer: function (feature, latlng) {
