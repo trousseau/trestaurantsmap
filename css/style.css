@@ -153,7 +153,7 @@
     border-radius: 50%;
     color: white;
     text-align: center;
-    line-height: 40px;
+    line-height: 32px;
     font-weight: bold;
     border: 2px solid white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -235,3 +235,37 @@
     max-height: 1000px;
     opacity: 1;
   }
+
+  .material-icon-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #8e44ad; /* Set a default background color */
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #ffffff; /* Add a border around the icon */
+  }
+
+  .material-style-wrapper {
+    background: #8e44ad;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures nothing sticks out */
+  }
+  
+  .custom-icon {
+    width: 60%; /* or try 24px if fixed size is better */
+    height: 60%;
+    object-fit: contain;
+  }
+  

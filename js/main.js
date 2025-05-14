@@ -13,22 +13,29 @@ let stationClusterGroup = null;
 const allMarkers = []; // Global array to store all restaurant markers
 
 const cuisineIconMap = {
-    italian: 'pizza-slice',
-    chinese: 'utensils',
-    japanese: 'fish',
-    mexican: 'pepper-hot',
-    indian: 'burn',
-    american: 'hamburger',
-    burgers: 'hamburger',
-    thai: 'leaf',
-    french: 'wine-glass',
-    default: 'utensils' // fallback icon
-  };
+    pizza: 'local_pizza',    
+    american: 'local_dining',
+    burgers: 'lunch_dining',
+    thai: 'set_meal',
+    bakery: 'bakery_dining',
+    default: 'restaurant' // fallback icon
+};
 
-// Add OpenStreetMap base layer
-// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; OpenStreetMap contributors'
-// }).addTo(map);
+const customIconMap = {
+    italian: 'pasta',
+    japanese: 'sushi',
+    indian: 'samosa',
+    steak: 'meat',
+    jewish: 'challah',
+    breakfast: 'fried-egg',
+    ramen: 'noodles',
+    mexican: 'taco',
+    polish: 'pierogi',
+    chinese: 'bao',
+    vietnamese: 'soup-bowl',
+    french: 'french-bread',
+    seafood: 'lobster'
+};
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap & CartoDB'
@@ -146,7 +153,7 @@ function filterLines() {
             return L.divIcon({
                 html: `<div style="background-color:${getHexColor(dominantColor)};" class="marker-cluster"><span>${cluster.getChildCount()}</span></div>`,
                 className: 'custom-cluster-icon',
-                iconSize: L.point(40, 40)
+                iconSize: L.point(32, 32)
             });
         }
     });
@@ -216,21 +223,7 @@ fetch('data/restaurants.json')
     data.forEach(place => {
       const cuisineStr = place.cuisine.toLowerCase();
 
-      // Try to find the first matching cuisine type
-      let matched = cuisineIconMap['default'];
-      for (const key in cuisineIconMap) {
-        if (cuisineStr.includes(key)) {
-          matched = cuisineIconMap[key];
-          break;
-        }
-      }
-
-      const icon = L.AwesomeMarkers.icon({
-        icon:  matched,
-        markerColor: 'purple',
-        iconColor: 'white',
-        prefix: 'fa'
-      });
+      const icon = getRestaurantIcon(cuisineStr);
 
       const marker = L.marker([place.lat, place.lng], { icon });
       marker.bindPopup(getPopupContent(place));
@@ -250,6 +243,63 @@ fetch('data/restaurants.json')
     map.addLayer(markerLayer);
   });
 
+  function getRestaurantIcon(cuisine) {
+    const cuisineStr = cuisine.toLowerCase();
+
+    const myArray = cuisineStr.split(",");
+
+    var cuisingVal = myArray[0];
+
+    // Check if the cuisine contains any of the keys in customIcons
+    for (const key in customIconMap) {
+        if (cuisingVal.includes(key)) {
+            // If the cuisine string contains a key from the customIcons list, use the custom icon
+            return L.divIcon({
+                html: `
+                  <div class="material-style-wrapper">
+                    <img src="icons/${customIconMap[key].toLowerCase()}.png" class="custom-icon" />
+                  </div>
+                `,
+                className: '', // disable Leaflet's default class
+                iconSize: [40, 40],
+                iconAnchor: [20, 40],
+                popupAnchor: [0, -40]
+              });
+        }
+    }
+
+    // If no custom icon is found, check if the cuisine contains any key from the materialIcons list
+    for (const key in cuisineIconMap) {
+        if (cuisineStr.includes(key)) {
+            // If the cuisine string contains a key from the materialIcons list, use the Material icon
+            return L.divIcon({
+                html: `<span class="material-icons">${cuisineIconMap[key]}</span>`,  // Use the Material icon
+                className: 'material-icon-marker',
+                iconSize: [32, 32]
+            });
+        }
+    }
+
+    // Fallback to a default Material icon if no match is found
+    return L.divIcon({
+        html: `<span class="material-icons">restaurant</span>`,  // Default Material icon
+        className: 'material-icon-marker',
+        iconSize: [32, 32]
+    });
+}
+
+function checkIfIconExists(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = function() {
+            resolve(true);  // Image loaded successfully
+        };
+        img.onerror = function() {
+            resolve(false);  // Image failed to load
+        };
+        img.src = url;  // Start loading the image
+    });
+}
 
 document.querySelectorAll('input[name="line"]').forEach(input => {
     input.addEventListener('change', () => {
