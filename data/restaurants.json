@@ -4,6 +4,7 @@
     "lng": -71.09732563718099,
     "cuisine": "Burgers",
     "line": "Green",
+    "website": "https://www.tastyburger.com/location/fenway/",
     "review": "For the price, you can't get a better burger in Boston. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -12,6 +13,7 @@
     "lng": -71.05559422132028,
     "cuisine": "Italian",
     "line": "Green, Orange",
+    "website": "https://www.lafamigliagiorgios.com/",
     "review": "Giant portions of Italian classics. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -20,6 +22,7 @@
     "lng": -71.1237720243863,
     "cuisine": "Jewish, American",
     "line": "Green",
+    "website": "https://www.zaftigs.com/",
     "review": "Classic deli fare with a Boston twist—don’t miss the potato pancakes. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -28,6 +31,7 @@
     "lng": -71.08721036205807,
     "cuisine": "Vietnamese, Thai",
     "line": "Green",
+    "website": "https://phobasilboston.com/",
     "review": "A local favorite for flavorful pho and spicy Thai noodles. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -36,6 +40,7 @@
     "lng": -71.03593886413256,
     "cuisine": "Seafood",
     "line": "Silver",
+    "website": "https://yankeelobster.com/",
     "review": "No-frills spot for fresh lobster rolls and clam chowder on the waterfront. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -44,6 +49,7 @@
     "lng": -71.06020582333612,
     "cuisine": "Chinese, Dim Sum",
     "line": "Orange, Silver",
+    "website": "https://heilamoon.com/",
     "review": "Bustling dim sum joint with carts and classics like shumai and bao. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -52,6 +58,7 @@
     "lng": -71.1218554105775,
     "cuisine": "Thai",
     "line": "Green",
+    "website": "https://www.brownsugarcafe.com/",
     "review": "Warm and welcoming with deeply flavored curries and royal Thai decor. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -60,6 +67,7 @@
     "lng": -71.05705647785226,
     "cuisine": "Polish",
     "line": "Red",
+    "website": "https://cafepolonia.com/",
     "review": "Hearty Polish dishes like pierogi and bigos in a cozy setting. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -68,6 +76,7 @@
     "lng": -71.0560049091291,
     "cuisine": "Seafood",
     "line": "Blue, Orange",
+    "website": "https://www.neptuneoyster.com/",
     "review": "Possibly the best lobster roll in the city—served hot or cold. ⭐️⭐️⭐️⭐️⭐️"
   },
   {
@@ -76,6 +85,7 @@
     "lng": -71.069939,
     "cuisine": "Spanish, Tapas",
     "line": "Silver",
+    "website": "https://www.toro-restaurant.com/",
     "review": "Buzzing tapas bar with bold flavors and a great outdoor patio. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -84,6 +94,7 @@
     "lng": -71.09421996537249,
     "cuisine": "Indian",
     "line": "Green",
+    "website": "https://www.indiaquality.com/",
     "review": "Longtime Fenway gem serving fragrant curries and perfect naan. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -92,6 +103,7 @@
     "lng": -71.004609,
     "cuisine": "Italian",
     "line": "Blue",
+    "website": "https://www.rinosplace.com/",
     "review": "Tiny East Boston classic with huge portions and housemade pasta. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -100,6 +112,7 @@
     "lng": -71.11590722165096,
     "cuisine": "Ramen, Japanese",
     "line": "Red",
+    "website": "https://www.santouka.co.jp/en/shop/usa/harvard.html",
     "review": "Rich bowls of slurpable tonkotsu ramen. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -108,6 +121,7 @@
     "lng": -71.06175343135342,
     "cuisine": "Ramen, Japanese",
     "line": "Green, Orange",
+    "website": "https://www.momosanramen.com/boston/",
     "review": "Chef Morimoto’s signature ramen spot inside Hub Hall near North Station. Flavor-forward bowls with bold broths and a sleek, modern vibe. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -116,6 +130,7 @@
     "lng": -71.12185978354628,
     "cuisine": "Ramen, Japanese",
     "line": "Red",
+    "website": "https://www.tsurumen.com/",
     "review": "Osaka-style ramen with rich paitan broth and handmade noodles. A minimalist gem in Davis Square. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -124,6 +139,7 @@
     "lng": -71.07685870255631,
     "cuisine": "Ramen, Japanese",
     "line": "Red",
+    "website": "https://www.sappororamen.com/",
     "review": "A Porter Square classic since 1990. Quick, satisfying bowls with homemade broth and tender pork. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -132,6 +148,7 @@
     "lng": -71.12348425124193,
     "cuisine": "Ramen, Japanese",
     "line": "Green",
+    "website": "https://www.gankoramen.com/",
     "review": "Sapporo-style ramen with caramelized shoyu broth and crispy garlic. Tucked inside Brookline’s arcade. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -140,6 +157,7 @@
     "lng": -71.12552408909623,
     "cuisine": "Ramen, Japanese",
     "line": "Green",
+    "website": "https://www.isshindoramen.com/",
     "review": "Hidden inside Super 88 in Allston. Rich tonkotsu broth and standout chicken karaage. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -148,6 +166,7 @@
     "lng": -71.0827194301921,
     "cuisine": "Ramen, Chinese",
     "line": "Green",
+    "website": "https://www.wensnoodle.com/",
     "review": "Fusion of Yunnan-style noodles and classic ramen. Located on Newbury Street with a modern twist. ⭐️⭐️⭐️"
   },
   {
@@ -156,14 +175,16 @@
     "lng": -71.06916540632344,
     "cuisine": "Ramen, Japanese",
     "line": "Orange",
+    "website": "https://www.zuruzururamen.com/",
     "review": "Malden Center’s spicy ramen haven. Customize your heat level and enjoy bold flavors. ⭐️⭐️⭐️⭐️"
   },
   {
     "name": "Ebisuya Japanese Noodle House",
-    "lat":42.42944542922438,
+    "lat": 42.42944542922438,
     "lng": -71.07424258100961,
     "cuisine": "Ramen, Japanese",
     "line": "Orange",
+    "website": "https://www.ebisuyaramen.com/",
     "review": "From market pop-up to full ramen shop. Offers spicy and non-spicy miso versions in Malden. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -172,6 +193,7 @@
     "lng": -71.1300,
     "cuisine": "Ramen, Japanese",
     "line": "Green (B)",
+    "website": "https://www.tottoramen.com/",
     "review": "Savory bowls of authentic Japanese ramen with rich broths and fresh noodles. A cozy spot in Allston. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -180,6 +202,7 @@
     "lng": -71.13143639821256,
     "cuisine": "Ramen, Japanese",
     "line": "Orange",
+    "website": "http://www.pikaichiramen.com/",
     "review": "Flavorful ramen with a variety of toppings in a casual setting. Located near Medford's Wellington Station. ⭐️⭐️⭐️⭐️"
   },
   {
@@ -188,46 +211,88 @@
     "lng": -71.11916346059559,
     "cuisine": "Ramen, Japanese",
     "line": "Red",
+    "website": "http://oneramensushi.com/",
     "review": "Delicious tonkotsu ramen and fresh sushi options in the heart of Cambridge. ⭐️⭐️⭐️⭐️"
   },
   {
     "name": "Soup Shack JP",
-    "lat":  42.311108339405166,
+    "lat": 42.311108339405166,
     "lng": -71.1155396884079,
     "cuisine": "Ramen, Thai, Vietnamese",
     "line": "Orange",
+    "website": "http://www.soupshacknoodles.com/",
     "review": "A fusion of Asian flavors offering ramen, pho, and Thai soups. Located in Jamaica Plain. ⭐️⭐️⭐️⭐️"
   },
-    {
-      "name": "Pho Pasteur",
-      "lat": 42.35142817574426,
-      "lng": -71.06273277045855,
-      "cuisine": "Vietnamese",
-      "line": "Orange",
-      "review": "A Chinatown staple offering a vast menu of Vietnamese dishes, with pho being a standout for its rich broth and generous portions. ⭐️⭐️⭐️⭐️"
-    },
-    {
-      "name": "Pho Viet's",
-      "lat": 42.35156379342123,
-      "lng": -71.12169972167865,
-      "cuisine": "Vietnamese",
-      "line": "Green",
-      "review": "Located near Packard's Corner, this unassuming eatery delivers authentic pho with a flavorful broth and fresh ingredients. A favorite among locals. ⭐️⭐️⭐️⭐️"
-    },
-    {
-      "name": "Pho Le Restaurant",
-      "lat": 42.30449989444241,
-      "lng": -71.05889724967895,
-      "cuisine": "Vietnamese",
-      "line": "Red",
-      "review": "A Dorchester gem offering traditional Vietnamese pho with a rich, aromatic broth and tender meats. The friendly atmosphere adds to its charm. ⭐️⭐️⭐️⭐️"
-    },
-    {
-      "name": "Pho Hoa Restaurant",
-      "lat": 42.30395389456279,
-      "lng": -71.05908351492896,
-      "cuisine": "Vietnamese",
-      "line": "Red",
-      "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
-    }
+  {
+    "name": "Pho Pasteur",
+    "lat": 42.35142817574426,
+    "lng": -71.06273277045855,
+    "cuisine": "Vietnamese",
+    "line": "Orange",
+    "website": "http://www.phopasteur.com/",
+    "review": "A Chinatown staple offering a vast menu of Vietnamese dishes, with pho being a standout for its rich broth and generous portions. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Pho Viet's",
+    "lat": 42.35156379342123,
+    "lng": -71.12169972167865,
+    "cuisine": "Vietnamese",
+    "line": "Green",
+    "website": "http://www.phoviets.com/",
+    "review": "Located near Packard's Corner, this unassuming eatery delivers authentic pho with a flavorful broth and fresh ingredients. A favorite among locals. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Pho Le Restaurant",
+    "lat": 42.30449989444241,
+    "lng": -71.05889724967895,
+    "cuisine": "Vietnamese",
+    "line": "Red",
+    "website": "http://pholedorchester.com/",
+    "review": "A Dorchester gem offering traditional Vietnamese pho with a rich, aromatic broth and tender meats. The friendly atmosphere adds to its charm. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Pho Hoa Restaurant",
+    "lat": 42.30395389456279,
+    "lng": -71.05908351492896,
+    "cuisine": "Vietnamese",
+    "line": "Red",
+    "website": "http://www.phohoarestaurant.com/",
+    "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "BAB Korean Bistro",
+    "lat": 42.3417863188125,
+    "lng": -71.12360809738833,
+    "cuisine": "Korean",
+    "line": "Green",
+    "website": "http://www.babkoreanbistro.com/",
+    "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Mr Bartley's Burger Cottage",
+    "lat": 42.37248719723798,
+    "lng": -71.1161315003607,
+    "cuisine": "Burgers",
+    "line": "Red",
+    "website": "http://www.mrbartley.com/",
+    "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Little Big Diner",
+    "lat": 42.3305831,
+    "lng": -71.1949463,
+    "cuisine": "Ramen",
+    "line": "Green",
+    "website": "http://www.littlebigdiner.com/",
+    "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Life Alive Lowell",
+    "lat": 42.6451295,
+    "lng": -71.3118589,
+    "cuisine": "Vegetarian",
+    "line": "Commuter",
+    "website": "http://www.lifealive.com/",
+    "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
+  }
 ]

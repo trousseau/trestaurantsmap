@@ -4,7 +4,7 @@ const map = L.map('map', {
 
 const miniMapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: ''
-  });
+});
 
 const mbtaLines = {};
 let stationLayer = null;
@@ -13,7 +13,7 @@ let stationClusterGroup = null;
 const allMarkers = []; // Global array to store all restaurant markers
 
 const cuisineIconMap = {
-    pizza: 'local_pizza',    
+    pizza: 'local_pizza',
     american: 'local_dining',
     burgers: 'lunch_dining',
     thai: 'set_meal',
@@ -39,7 +39,7 @@ const customIconMap = {
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap & CartoDB'
-  }).addTo(map);
+}).addTo(map);
 
 function addMBTALine(geojsonUrl, color, lineName) {
     fetch(geojsonUrl)
@@ -138,17 +138,17 @@ function filterLines() {
         iconCreateFunction: function (cluster) {
             const children = cluster.getAllChildMarkers();
             const colorCounts = {};
-    
+
             // Count marker colors
             children.forEach(marker => {
                 const line = marker.options.icon.options.markerColor || 'blue';
                 colorCounts[line] = (colorCounts[line] || 0) + 1;
             });
-    
+
             // Get the most common color
             const dominantColor = Object.entries(colorCounts)
                 .sort((a, b) => b[1] - a[1])[0][0];
-    
+
             // Return a custom cluster icon with that color
             return L.divIcon({
                 html: `<div style="background-color:${getHexColor(dominantColor)};" class="marker-cluster"><span>${cluster.getChildCount()}</span></div>`,
@@ -157,13 +157,15 @@ function filterLines() {
             });
         }
     });
-    
+
 
     stationLayer = L.geoJSON(filtered, {
         pointToLayer: function (feature, latlng) {
-            const line = feature.properties.lines?.[0]?.toLowerCase() || 'blue';
+            const line = feature.properties.lines ? . [0] ? .toLowerCase() || 'blue';
             const icon = getMarkerIcon(line);
-            return L.marker(latlng, { icon });
+            return L.marker(latlng, {
+                icon
+            });
         },
         onEachFeature: function (feature, layer) {
             const name = feature.properties.name || "Unknown Station";
@@ -209,6 +211,7 @@ function getPopupContent(place) {
         <div class="popup-card">
         <h4>${place.name}</h4>
         <p><strong>Cuisine:</strong> ${place.cuisine}</p>
+        <p><strong>Description:</strong> ${place.review}</p>
         <p><strong>Line:</strong> ${place.line}</p>
         <a href="${place.website}" target="_blank">Visit website</a>
         </div>
@@ -216,34 +219,36 @@ function getPopupContent(place) {
 }
 
 fetch('data/restaurants.json')
-  .then(res => res.json())
-  .then(data => {
-    const markers = [];
+    .then(res => res.json())
+    .then(data => {
+        const markers = [];
 
-    data.forEach(place => {
-      const cuisineStr = place.cuisine.toLowerCase();
+        data.forEach(place => {
+            const cuisineStr = place.cuisine.toLowerCase();
 
-      const icon = getRestaurantIcon(cuisineStr);
+            const icon = getRestaurantIcon(cuisineStr);
 
-      const marker = L.marker([place.lat, place.lng], { icon });
-      marker.bindPopup(getPopupContent(place));
+            const marker = L.marker([place.lat, place.lng], {
+                icon
+            });
+            marker.bindPopup(getPopupContent(place));
 
-      marker.meta = {
-        line: place.line,
-        cuisine: place.cuisine
-      };
+            marker.meta = {
+                line: place.line,
+                cuisine: place.cuisine
+            };
 
-      marker.searchText = `${place.name} ${place.cuisine} ${place.line}`.toLowerCase();
+            marker.searchText = `${place.name} ${place.cuisine} ${place.line}`.toLowerCase();
 
-      markers.push(marker);
-      allMarkers.push(marker);
+            markers.push(marker);
+            allMarkers.push(marker);
+        });
+
+        const markerLayer = L.layerGroup(markers);
+        map.addLayer(markerLayer);
     });
 
-    const markerLayer = L.layerGroup(markers);
-    map.addLayer(markerLayer);
-  });
-
-  function getRestaurantIcon(cuisine) {
+function getRestaurantIcon(cuisine) {
     const cuisineStr = cuisine.toLowerCase();
 
     const myArray = cuisineStr.split(",");
@@ -264,7 +269,7 @@ fetch('data/restaurants.json')
                 iconSize: [40, 40],
                 iconAnchor: [20, 40],
                 popupAnchor: [0, -40]
-              });
+            });
         }
     }
 
@@ -273,7 +278,7 @@ fetch('data/restaurants.json')
         if (cuisineStr.includes(key)) {
             // If the cuisine string contains a key from the materialIcons list, use the Material icon
             return L.divIcon({
-                html: `<span class="material-icons">${cuisineIconMap[key]}</span>`,  // Use the Material icon
+                html: `<span class="material-icons">${cuisineIconMap[key]}</span>`, // Use the Material icon
                 className: 'material-icon-marker',
                 iconSize: [32, 32]
             });
@@ -282,7 +287,7 @@ fetch('data/restaurants.json')
 
     // Fallback to a default Material icon if no match is found
     return L.divIcon({
-        html: `<span class="material-icons">restaurant</span>`,  // Default Material icon
+        html: `<span class="material-icons">restaurant</span>`, // Default Material icon
         className: 'material-icon-marker',
         iconSize: [32, 32]
     });
@@ -291,13 +296,13 @@ fetch('data/restaurants.json')
 function checkIfIconExists(url) {
     return new Promise((resolve, reject) => {
         const img = new Image();
-        img.onload = function() {
-            resolve(true);  // Image loaded successfully
+        img.onload = function () {
+            resolve(true); // Image loaded successfully
         };
-        img.onerror = function() {
-            resolve(false);  // Image failed to load
+        img.onerror = function () {
+            resolve(false); // Image failed to load
         };
-        img.src = url;  // Start loading the image
+        img.src = url; // Start loading the image
     });
 }
 
@@ -314,10 +319,10 @@ document.querySelectorAll('input[name="cuisine"]').forEach(input => {
     });
 });
 
-document.getElementById('toggle-btn').addEventListener('click', function() {
+document.getElementById('toggle-btn').addEventListener('click', function () {
     const filterPanel = document.getElementById('filter-panel');
     filterPanel.classList.toggle('open');
-  });
+});
 
 map.options.zoomAnimation = true; // Enable smooth zoom transitions
 const locateControl = L.control.locate({
