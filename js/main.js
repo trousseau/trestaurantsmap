@@ -161,7 +161,7 @@ function filterLines() {
 
     stationLayer = L.geoJSON(filtered, {
         pointToLayer: function (feature, latlng) {
-            const line = feature.properties.lines ? . [0] ? .toLowerCase() || 'blue';
+            const line = feature.properties.lines?.[0]?.toLowerCase() || 'blue';
             const icon = getMarkerIcon(line);
             return L.marker(latlng, {
                 icon
