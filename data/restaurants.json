@@ -71,42 +71,6 @@
     "review": "Hearty Polish dishes like pierogi and bigos in a cozy setting. ⭐️⭐️⭐️⭐️"
   },
   {
-    "name": "Neptune Oyster",
-    "lat": 42.3632734382439,
-    "lng": -71.0560049091291,
-    "cuisine": "Seafood",
-    "line": "Blue, Orange",
-    "website": "https://www.neptuneoyster.com/",
-    "review": "Possibly the best lobster roll in the city—served hot or cold. ⭐️⭐️⭐️⭐️⭐️"
-  },
-  {
-    "name": "Toro",
-    "lat": 42.343892,
-    "lng": -71.069939,
-    "cuisine": "Spanish, Tapas",
-    "line": "Silver",
-    "website": "https://www.toro-restaurant.com/",
-    "review": "Buzzing tapas bar with bold flavors and a great outdoor patio. ⭐️⭐️⭐️⭐️"
-  },
-  {
-    "name": "India Quality Restaurant",
-    "lat": 42.34855731365751,
-    "lng": -71.09421996537249,
-    "cuisine": "Indian",
-    "line": "Green",
-    "website": "https://www.indiaquality.com/",
-    "review": "Longtime Fenway gem serving fragrant curries and perfect naan. ⭐️⭐️⭐️⭐️"
-  },
-  {
-    "name": "Rino’s Place",
-    "lat": 42.382201,
-    "lng": -71.004609,
-    "cuisine": "Italian",
-    "line": "Blue",
-    "website": "https://www.rinosplace.com/",
-    "review": "Tiny East Boston classic with huge portions and housemade pasta. ⭐️⭐️⭐️⭐️"
-  },
-  {
     "name": "Hokkaido Ramen Santouka Harvard Square",
     "lat": 42.37233104736645,
     "lng": -71.11590722165096,
@@ -161,15 +125,6 @@
     "review": "Hidden inside Super 88 in Allston. Rich tonkotsu broth and standout chicken karaage. ⭐️⭐️⭐️⭐️"
   },
   {
-    "name": "Wen’s Yunnan Noodle & Ramen",
-    "lat": 42.35019430207334,
-    "lng": -71.0827194301921,
-    "cuisine": "Ramen, Chinese",
-    "line": "Green",
-    "website": "https://www.wensnoodle.com/",
-    "review": "Fusion of Yunnan-style noodles and classic ramen. Located on Newbury Street with a modern twist. ⭐️⭐️⭐️"
-  },
-  {
     "name": "Zuru Zuru",
     "lat": 42.42697406828625,
     "lng": -71.06916540632344,
@@ -177,15 +132,6 @@
     "line": "Orange",
     "website": "https://www.zuruzururamen.com/",
     "review": "Malden Center’s spicy ramen haven. Customize your heat level and enjoy bold flavors. ⭐️⭐️⭐️⭐️"
-  },
-  {
-    "name": "Ebisuya Japanese Noodle House",
-    "lat": 42.42944542922438,
-    "lng": -71.07424258100961,
-    "cuisine": "Ramen, Japanese",
-    "line": "Orange",
-    "website": "https://www.ebisuyaramen.com/",
-    "review": "From market pop-up to full ramen shop. Offers spicy and non-spicy miso versions in Malden. ⭐️⭐️⭐️⭐️"
   },
   {
     "name": "Totto Ramen",
@@ -197,15 +143,6 @@
     "review": "Savory bowls of authentic Japanese ramen with rich broths and fresh noodles. A cozy spot in Allston. ⭐️⭐️⭐️⭐️"
   },
   {
-    "name": "Pikaichi",
-    "lat": 42.418201475348134,
-    "lng": -71.13143639821256,
-    "cuisine": "Ramen, Japanese",
-    "line": "Orange",
-    "website": "http://www.pikaichiramen.com/",
-    "review": "Flavorful ramen with a variety of toppings in a casual setting. Located near Medford's Wellington Station. ⭐️⭐️⭐️⭐️"
-  },
-  {
     "name": "One Ramen & Sushi",
     "lat": 42.38554937732717,
     "lng": -71.11916346059559,
@@ -213,15 +150,6 @@
     "line": "Red",
     "website": "http://oneramensushi.com/",
     "review": "Delicious tonkotsu ramen and fresh sushi options in the heart of Cambridge. ⭐️⭐️⭐️⭐️"
-  },
-  {
-    "name": "Soup Shack JP",
-    "lat": 42.311108339405166,
-    "lng": -71.1155396884079,
-    "cuisine": "Ramen, Thai, Vietnamese",
-    "line": "Orange",
-    "website": "http://www.soupshacknoodles.com/",
-    "review": "A fusion of Asian flavors offering ramen, pho, and Thai soups. Located in Jamaica Plain. ⭐️⭐️⭐️⭐️"
   },
   {
     "name": "Pho Pasteur",
@@ -294,5 +222,14 @@
     "line": "Commuter",
     "website": "http://www.lifealive.com/",
     "review": "Situated in Dorchester, Pho Hoa serves up classic pho dishes with a focus on fresh ingredients and authentic flavors. A reliable choice for pho enthusiasts. ⭐️⭐️⭐️⭐️"
+  },
+  {
+    "name": "Belle Isle Seafood",
+    "lat": 42.382421292552955,
+    "lng": -70.99359626415163,
+    "cuisine": "Seafood",
+    "line": "Blue",
+    "website": "https://www.belleisleseafood.net/",
+    "review": ". ⭐️⭐️⭐️"
   }
 ]
